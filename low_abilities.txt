@@ -1,0 +1,6 @@
+Strength - feeble, scrawny
+Dexterity - clumsy, fumbling
+Constitution - sickly, pale
+Intelligence - dim-witted, slow
+Wisdom - oblivious, absentminded
+Charisma - dull, boring

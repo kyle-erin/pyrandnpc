@@ -1,0 +1,22 @@
+Dwarf
+Elf
+Halfing
+Human
+Dragonborn
+Gnome
+Half-Elf
+Half-Orc
+Tiefling
+Bugbear
+Hobgoblin
+Goblin
+Kobold
+Aasimar
+Firbolg
+Goliath
+Kenku
+Lizardfolk
+Tabaxi
+Triton
+Orc
+Yuan-Ti Pureblood

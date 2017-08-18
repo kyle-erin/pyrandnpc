@@ -1,0 +1,6 @@
+Strength - powerful, brawny, strong as an ox
+Dexterity - lithe, agile, graceful
+Constitution - hardy, hale, healthy
+Intelligence - studious, learned, inquisitive
+Wisdom - perceptive, spiritual, insightful
+Charisma - persuasive, forceful, born leader
