@@ -85,6 +85,9 @@ celerybeat-schedule
 # dotenv
 .env
 
+# output file
+characters.xlsx
+
 # virtualenv
 .venv
 venv/
