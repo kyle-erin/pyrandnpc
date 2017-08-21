@@ -18,4 +18,6 @@ To use, simply run main.py
 
 `python main.py`
 
-The generated characters are stored in 'characters.xlsx'
+The generated characters are stored in `characters.xlsx`
+
+If you don't have Excel, you should be able to upload the file to Google Drive and 'Open with Google Sheets'
