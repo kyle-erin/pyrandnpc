@@ -1,0 +1,22 @@
+Dwarf, dwarf_first.txt, dwarf_last.txt
+Elf, elf_first.txt, elf_last.txt
+Halfling, halfling_first.txt, halfling_last.txt
+Human, human_first.txt, human_last.txt
+Dragonborn, dragonborn_first.txt
+Gnome, gnome_first.txt, gnome_last.txt
+Half-Elf, half-elf_first.txt, half-elf_last.txt
+Half-Orc, half-orc_first.txt
+Tiefling, tiefling_first.txt, tiefling_last.txt
+Bugbear, bugbear_first.txt, bugbear_last.txt
+Hobgoblin, hob_first.txt
+Goblin, goblin_first.txt
+Kobold, kobold_first.txt
+Aasimar, human_first.txt, human_last.txt
+Firbolg, elf_first.txt, elf_last.txt
+Goliath, goliath_first.txt, goliath_nickname.txt, goliath_last.txt
+Kenku, kenku_first.txt
+Lizardfolk, lizard_first.txt
+Tabaxi, tabaxi_first.txt, tabaxi_last.txt
+Triton, triton_first.txt, triton_last.txt
+Orc, orc_first.txt
+Yuan-Ti Pureblood, yuan_first.txt

@@ -3,7 +3,8 @@ from openpyxl import Workbook
 from char import Char
 
 WORKBOOK_FILENAME = 'characters.xlsx'
-COUNT = 10
+DATA_FOLDER = 'data'
+COUNT = 100
 TITLES = ['Name', 'Race', 'Appearance', 'Bonds', 'Flaws', 'High Ability', 'Low Ability', 'Ideals', 'Interactions with Others',
           'Mannerisms', 'Talents', 'Useful Knowledge']
 
@@ -27,19 +28,19 @@ def getrandomtrait(arr):
 
 # Load trait data
 # classes = getfilecontents('classes.txt')
-bonds = getfilecontents('bonds.txt')
-appearances = getfilecontents('appearances.txt')
-flaws_secrets = getfilecontents('flaws_secrets.txt')
-high_abilities = getfilecontents('high_abilities.txt')
-ideals = getfilecontents('ideals.txt')
-interactions = getfilecontents('interactions.txt')
-low_abilities = getfilecontents('low_abilities.txt')
-mannerisms = getfilecontents('mannerisms.txt')
-races = getfilecontents('races.txt')
-talents = getfilecontents('talents.txt')
-useful_knowledge = getfilecontents('useful_knowledge.txt')
-firstnames = getfilecontents('firstnames.txt')
-lastnames = getfilecontents('lastnames.txt')
+bonds = getfilecontents(DATA_FOLDER + '/bonds.txt')
+appearances = getfilecontents(DATA_FOLDER + '/appearances.txt')
+flaws_secrets = getfilecontents(DATA_FOLDER + '/flaws_secrets.txt')
+high_abilities = getfilecontents(DATA_FOLDER + '/high_abilities.txt')
+ideals = getfilecontents(DATA_FOLDER + '/ideals.txt')
+interactions = getfilecontents(DATA_FOLDER + '/interactions.txt')
+low_abilities = getfilecontents(DATA_FOLDER + '/low_abilities.txt')
+mannerisms = getfilecontents(DATA_FOLDER + '/mannerisms.txt')
+races = getfilecontents(DATA_FOLDER + '/races.txt')
+talents = getfilecontents(DATA_FOLDER + '/talents.txt')
+useful_knowledge = getfilecontents(DATA_FOLDER + '/useful_knowledge.txt')
+firstnames = getfilecontents(DATA_FOLDER + '/firstnames.txt')
+lastnames = getfilecontents(DATA_FOLDER + '/lastnames.txt')
 
 
 def getrandabilities(high, low):
@@ -54,7 +55,11 @@ def getrandabilities(high, low):
 
 
 def getrandchar():
-    race = getrandomtrait(races)
+    racedata = getrandomtrait(races).split(',')
+    if len(racedata) <= 1:
+        raise ValueError('races.txt file not formatted correctly. Format: race, name_filename.txt,..')
+    race = racedata[0].strip()
+    # race = getrandomtrait(races)
     # clss = getrandomtrait(classes)
     appearance = getrandomtrait(appearances)
     bond = getrandomtrait(bonds)
@@ -67,7 +72,16 @@ def getrandchar():
     mannerism = getrandomtrait(mannerisms)
     talent = getrandomtrait(talents)
     useful = getrandomtrait(useful_knowledge)
-    name = getrandomtrait(firstnames) + " " + getrandomtrait(lastnames)
+    firstnamedata = getfilecontents(DATA_FOLDER + '/' + racedata[1].strip())
+    name = getrandomtrait(firstnamedata)
+    if len(racedata) == 4:
+        lastnamedata = getfilecontents(DATA_FOLDER + '/' + racedata[3].strip())
+        middlenamedata = getfilecontents(DATA_FOLDER + '/' + racedata[2].strip())
+        name += ' "' + getrandomtrait(middlenamedata) + '" ' + getrandomtrait(lastnamedata)
+    if len(racedata) == 3:
+        lastnamedata = getfilecontents(DATA_FOLDER + '/' + racedata[2].strip())
+        name += ' ' + getrandomtrait(lastnamedata)
+    # name = getrandomtrait(firstnames) + " " + getrandomtrait(lastnames)
     char = Char(name, race, appearance, bond, flaws, high, low, ideal, interaction, mannerism,
                 talent, useful)
     return char
