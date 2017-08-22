@@ -1,5 +1,5 @@
 class Char:
-    def __init__(self, name, race, appearance, bond, flaws, high, low, ideals, interactions, mannerisms, talents,
+    def __init__(self, name, race, appearance, background, bond, flaws, high, low, ideals, interactions, mannerisms, talents,
                  useful):
         self.race = race
         self.name = name
@@ -13,11 +13,14 @@ class Char:
         self.interactions = interactions
         self.mannerisms = mannerisms
         self.talents = talents
+        self.background = background
         self.useful = useful
 
     def __str__(self):
-        return self.name + ' ' + self.race + ' ' + ' ' + self.appearance + ' ' + self.bond + ' ' + self.flaws + ' ' + self.high + ' ' + self.low + ' ' + self.ideals + ' ' + self.interactions + ' ' + self.mannerisms + ' ' + self.talents + ' ' + self.useful
+        return self.name + ' ' + self.race + ' ' + ' ' + self.appearance + ' ' + self.background + ' ' +\
+               self.bond + ' ' + self.flaws + ' ' + self.high + ' ' + self.low + ' ' + self.ideals + ' ' +\
+               self.interactions + ' ' + self.mannerisms + ' ' + self.talents + ' ' + self.useful
 
     def getarray(self):
-        return [self.name, self.race, self.appearance, self.bond, self.flaws, self.high, self.low, self.ideals,
+        return [self.name, self.race, self.appearance, self.background, self.bond, self.flaws, self.high, self.low, self.ideals,
                 self.interactions, self.mannerisms, self.talents, self.useful]
